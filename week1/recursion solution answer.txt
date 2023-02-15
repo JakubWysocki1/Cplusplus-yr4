@@ -1,0 +1,38 @@
+The problem is about an archery competition between two players, 
+Alice and Bob, where Alice shoots first and Bob shoots second. 
+The target has integer scoring sections ranging from 0 to 11, 
+and the points are calculated based on the number of arrows each player shoots in each section. 
+If Alice shoots more arrows in a section than Bob, then Alice takes the points for that section, 
+otherwise Bob takes the points. The goal is to determine the number of arrows Bob should shoot in each section to maximize 
+his total points.
+
+
+
+1. Set finalVector as an empty vector to store the final distribution of Bob's arrows
+2. Set overallMax to 0 to keep track of the maximum number of points Bob can get.
+3. Define a function `solve(aliceArrows, bobArrows, curMax, numArrows, ind)`:
+	4. If `numArrows` is 0 or `ind` is negative, meaning Bob has used up all his arrows or has finished checking all rounds:
+		5. If `overallMax` is less than `curMax`, update `overallMax` to `curMax` and `finalVector` to `bobArrows`.
+		6. Return.
+	7. If `ind` is 0, meaning Bob is checking the first round:
+		8. Set the number of arrows Bob shoots in the first round to `numArrows`.
+		9. Recursively call `solve` function with updated `bobArrows`, `curMax` adding the number of arrows Bob shoots in the first round, `numArrows` set to 0, and `ind` decremented by 1.
+		10. Set the number of arrows Bob shoots in the first round back to 0.
+		11. Return.
+	12. If `numArrows` is greater or equal to `aliceArrows[ind]+1`, meaning Bob has enough arrows to shoot one more than Alice in this round:
+		13. Set the number of arrows Bob shoots in this round to `aliceArrows[ind]+1`.
+		14. Recursively call `solve` function with updated `bobArrows`, `curMax` adding the number of arrows Bob shoots in this round, `numArrows` decremented by `aliceArrows[ind]+1`, and `ind` decremented by 1.
+		15. Set the number of arrows Bob shoots in this round back to 0.
+	16. Recursively call `solve` function with the same inputs except `ind` decremented by 1.
+4. Define a function `maximumBobPoints(numArrows, aliceArrows)`:
+	5. Create an empty vector `bobArrows` with 12 elements and set all elements to 0.
+	6. Call `solve` function with `aliceArrows`, `bobArrows`, `curMax` set to 0, `numArrows` as the input, and `ind` set to 11.
+	7. Return `finalVector`.
+
+1.first create two variables in a class: vector to store final results and a int variable to store maxium points
+2.Then create a function that takes in aliceArrows vector, bobsArrows vector, bobs currrent score, 
+remaining num arrows bob has, index of current arrow bob is shooting
+3. if bob has no more arrows or the index is less than 0, the program then should check if the current score
+is higher than the max score. If so then the max score and the final results is updated. 
+4. if bob reaches first arrow (index of 0), bobsvector at the corresponding index is set to the number of arrows
+remaining. Then the funciton should be called passing in 
