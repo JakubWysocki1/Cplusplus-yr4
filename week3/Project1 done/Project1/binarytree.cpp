@@ -40,7 +40,7 @@ void BinaryTree::insert(int data) {
 
 void BinaryTree::preOrderTraversal() {
     if (root != nullptr) {
-        
+        cout << root->data << " ";
         preOrderTraversal(root->left);
         preOrderTraversal(root->right);
     }
@@ -57,7 +57,7 @@ void BinaryTree::preOrderTraversal(Node* focusNode) {
 void BinaryTree::inOrderTraversal() {
     if (root != nullptr) {
         inOrderTraversal(root->left);
-        
+        cout << root->data << " ";
         inOrderTraversal(root->right);
     }
 };
@@ -73,7 +73,7 @@ void BinaryTree::postOrderTraversal() {
     if (root != nullptr) {
         postOrderTraversal(root->left);
         preOrderTraversal(root->right);
-        
+        cout << root->data << " ";
     }
 };
 
@@ -89,7 +89,6 @@ void BinaryTree::calcDepth() {
 
         cout << calcDepth(root);
         
-    
     
 };
 
@@ -130,6 +129,11 @@ Node* BinaryTree::deleteNode(Node* focusnode, int number) {
     //if node is empty stop
     if (focusnode == NULL) {
         return NULL;
+    }
+
+    if (focusnode->left == nullptr && focusnode->right == nullptr) {
+        root = nullptr;
+        return root;
     }
 
     //if the number to be deleted is smaller than nodes its on left subtree

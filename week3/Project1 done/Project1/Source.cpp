@@ -17,13 +17,13 @@ int main() {
 	BinaryTree tree;
 
 	tree.insert(53);
-	tree.insert(50);
-	tree.insert(67);
-	tree.insert(69);
-	tree.insert(96);
-	tree.insert(100);
-	tree.insert(31);
-	tree.insert(61);
+
+	//tree.insert(67);
+	//tree.insert(69);
+	//tree.insert(96);
+	//tree.insert(100);
+	//tree.insert(31);
+	//tree.insert(61);
 
 	cout << "PreOrderTraversal:" << endl;
 	tree.preOrderTraversal();
@@ -39,12 +39,12 @@ int main() {
 
 
 	cout << endl << "AfterDeletion:" << endl;
-	tree.deleteNode(100);
+	tree.deleteNode(53);
 	tree.preOrderTraversal();
 
 
-	cout << endl << "Check Balanced:" << endl;
-	tree.checkBalanced();
+	//cout << endl << "Check Balanced:" << endl;
+	//tree.checkBalanced();
 
 
 
