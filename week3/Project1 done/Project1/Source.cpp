@@ -3,6 +3,7 @@
 References:
 https://www.geeksforgeeks.org/introduction-to-binary-tree-data-structure-and-algorithm-tutorials/
 https://www.geeksforgeeks.org/find-the-maximum-depth-or-height-of-a-tree/
+https://prepinsta.com/cpp-program/deletion-in-binary-search-tree/
 
 */
 #include <iostream>
@@ -35,6 +36,19 @@ int main() {
 
 	cout << endl << "TreeDepth:" << endl;
 	tree.calcDepth();
+
+
+	cout << endl << "AfterDeletion:" << endl;
+	tree.deleteNode(100);
+	tree.preOrderTraversal();
+
+
+	cout << endl << "Check Balanced:" << endl;
+	tree.checkBalanced();
+
+
+
+	
 	return 0;
 
 }

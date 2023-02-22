@@ -39,10 +39,10 @@ void BinaryTree::insert(int data) {
 };
 
 void BinaryTree::preOrderTraversal() {
-    if (this->root != nullptr) {
+    if (root != nullptr) {
         
-        preOrderTraversal(this->root->left);
-        preOrderTraversal(this->root->right);
+        preOrderTraversal(root->left);
+        preOrderTraversal(root->right);
     }
 };
 
@@ -55,10 +55,10 @@ void BinaryTree::preOrderTraversal(Node* focusNode) {
 };
 
 void BinaryTree::inOrderTraversal() {
-    if (this->root != nullptr) {
-        inOrderTraversal(this->root->left);
+    if (root != nullptr) {
+        inOrderTraversal(root->left);
         
-        inOrderTraversal(this->root->right);
+        inOrderTraversal(root->right);
     }
 };
 void BinaryTree::inOrderTraversal(Node* focusNode) {
@@ -70,9 +70,9 @@ void BinaryTree::inOrderTraversal(Node* focusNode) {
 };
 
 void BinaryTree::postOrderTraversal() {
-    if (this->root != nullptr) {
-        postOrderTraversal(this->root->left);
-        preOrderTraversal(this->root->right);
+    if (root != nullptr) {
+        postOrderTraversal(root->left);
+        preOrderTraversal(root->right);
         
     }
 };
@@ -86,29 +86,128 @@ void BinaryTree::postOrderTraversal(Node* focusNode) {
 };
 
 void BinaryTree::calcDepth() {
-    if (this->root != nullptr) {
-        cout << calcDepth(this->root);
+
+        cout << calcDepth(root);
         
-    }
+    
     
 };
 
 int BinaryTree::calcDepth(Node* focusnode) {
-    if (focusnode != nullptr){
+    
+        ///* compute the depth of each subtree */
+        //int lDepth = calcDepth(focusnode->left);
+        //int rDepth = calcDepth(focusnode->right);
 
-        /* compute the depth of each subtree */
-        int lDepth = calcDepth(focusnode->left);
-        int rDepth = calcDepth(focusnode->right);
+        ///* use the larger one */
+        //if (lDepth > rDepth) {
+        //    return (lDepth + 1);
+        //}
+        //else {
+        //    return (rDepth + 1);
+        //}
 
-        /* use the larger one */
+        int lDepth = calcLeft(focusnode);
+        int rDepth = calcRight(focusnode);
+
         if (lDepth > rDepth) {
-            return (lDepth + 1);
+            return (lDepth);
+
         }
         else {
-            return (rDepth + 1);
+            return (rDepth);
+        }
+
+
+};
+
+void BinaryTree::deleteNode(int number) {
+    deleteNode(root, number);
+
+};
+
+Node* BinaryTree::deleteNode(Node* focusnode, int number) {
+    //if node is empty stop
+    if (focusnode == NULL) {
+        return NULL;
+    }
+
+    //if the number to be deleted is smaller than nodes its on left subtree
+    if (focusnode->data > number) {
+        focusnode->left = deleteNode(focusnode->left, number);
+    }
+    //if the number to be deleted is greater than nodes its on right subtree
+    else if (focusnode->data < number) {
+        focusnode->right = deleteNode(focusnode->right, number);
+    }
+    else { //if nuumber is the same as in the node then thats the node
+        // Left child NULL
+        if (focusnode->left == NULL) {
+            Node* temp = focusnode->right;
+            delete focusnode;
+            return temp;
+        }
+        // Right child NULL
+        else if (focusnode->right == NULL) {
+            Node* temp = focusnode->left;
+            delete focusnode;
+            return temp;
+        }
+        else {
+            // Finding the inorder successor
+            Node* temp = focusnode->right;
+            // Finding the leftmost node in right subtree
+            while (temp->left != NULL) temp = temp->left;
+            // Changing value of root
+            focusnode->data = temp->data;
+            // Deleting the leftmost node;
+            focusnode->right = deleteNode(focusnode->right, temp->data);
         }
     }
-    else {
-        return 0;
+    return focusnode;
+
+};
+
+int BinaryTree::calcLeft(Node* focusnode) {
+    if (focusnode != nullptr) {
+        int lDepth = calcLeft(focusnode->left);
+
+        return (lDepth + 1);
     }
+
+    return 0;
+}
+
+int BinaryTree::calcRight(Node* focusnode) {
+    if (focusnode != nullptr) {
+        int rDepth = calcRight(focusnode->right);
+
+        return (rDepth + 1);
+    }
+
+    return 0;
+    
+    
+}
+
+void BinaryTree::checkBalanced() {
+    if (checkBalanced(root)) {
+        cout << "Balanced";
+    }
+    else {
+        cout << "Not Balanced";
+    }
+};
+
+bool BinaryTree::checkBalanced(Node* focusNode){
+    int lNode = calcLeft(focusNode);
+    int rNode = calcRight(focusNode);
+
+    cout << "Left side depth:" << lNode << endl;
+    cout << "Right side depth:" << rNode << endl;
+    if (lNode != rNode) {
+        return false;
+    }
+
+    return true;
 };
