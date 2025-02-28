@@ -1,0 +1,12 @@
+﻿  Lab9.cpp
+C:\Users\admin\OneDrive - Technological University Dublin\yr 4\algorithims\week9\Lab9\Lab9\Lab9.cpp(174,39): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+C:\Users\admin\OneDrive - Technological University Dublin\yr 4\algorithims\week9\Lab9\Lab9\Lab9.cpp(179,39): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+C:\Users\admin\OneDrive - Technological University Dublin\yr 4\algorithims\week9\Lab9\Lab9\Lab9.cpp(184,39): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+C:\Users\admin\OneDrive - Technological University Dublin\yr 4\algorithims\week9\Lab9\Lab9\Lab9.cpp(189,39): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+C:\Users\admin\OneDrive - Technological University Dublin\yr 4\algorithims\week9\Lab9\Lab9\Lab9.cpp(194,39): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+C:\Users\admin\OneDrive - Technological University Dublin\yr 4\algorithims\week9\Lab9\Lab9\Lab9.cpp(204,39): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\admin\OneDrive - Technological University Dublin\yr 4\algorithims\week9\Lab9\Lab9\Lab9.cpp(210,39): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\admin\OneDrive - Technological University Dublin\yr 4\algorithims\week9\Lab9\Lab9\Lab9.cpp(216,39): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\admin\OneDrive - Technological University Dublin\yr 4\algorithims\week9\Lab9\Lab9\Lab9.cpp(222,39): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\admin\OneDrive - Technological University Dublin\yr 4\algorithims\week9\Lab9\Lab9\Lab9.cpp(228,39): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  Lab9.vcxproj -> C:\Users\admin\OneDrive - Technological University Dublin\yr 4\algorithims\week9\Lab9\x64\Debug\Lab9.exe

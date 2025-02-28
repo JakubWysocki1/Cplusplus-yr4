@@ -1,0 +1,4 @@
+﻿  Source.cpp
+C:\Users\admin\OneDrive - Technological University Dublin\yr 4\algorithims\testing\test amrksweep\test amrksweep\Source.cpp(47,36): error C2065: 'objects': undeclared identifier
+C:\Users\admin\OneDrive - Technological University Dublin\yr 4\algorithims\testing\test amrksweep\test amrksweep\Source.cpp(48,32): error C2065: 'objects': undeclared identifier
+C:\Users\admin\OneDrive - Technological University Dublin\yr 4\algorithims\testing\test amrksweep\test amrksweep\Source.cpp(53,11): error C2065: 'objects': undeclared identifier
